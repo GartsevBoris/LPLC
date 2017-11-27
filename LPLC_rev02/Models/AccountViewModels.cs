@@ -64,6 +64,22 @@ namespace LPLC_rev02.Models
 
     public class RegisterViewModel
     {
+
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [DataType(DataType.ImageUrl)]
+        [Display(Name = "Avatar")]
+        public string Avatar { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Nic")]
+        public string Nic { get; set; }
+
+
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
