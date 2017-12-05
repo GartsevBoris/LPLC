@@ -20,10 +20,9 @@ namespace LPLC_rev02.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<ArticleViewModels> Articles { get; set;}
 
-        public DbSet<UserLoginInfo> UserLoginInfo { get; set;} /// <summary>
-        /// add for view users information
-        /// </summary>
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

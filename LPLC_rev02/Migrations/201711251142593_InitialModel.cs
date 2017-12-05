@@ -8,6 +8,16 @@ namespace LPLC_rev02.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.ArticleViewModels",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Content = c.String(),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -94,6 +104,7 @@ namespace LPLC_rev02.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.ArticleViewModels");
         }
     }
 }
